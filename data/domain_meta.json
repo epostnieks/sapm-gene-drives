@@ -1,0 +1,131 @@
+{
+  "key": "sapm-gene-drives",
+  "meta_fill": {
+    "pi": "$2.8B",
+    "psa": "-$32.0B",
+    "mu": "0.081",
+    "kappa": "1.55"
+  },
+  "psf": {
+    "pi_c": 0.3,
+    "pi_p": 2.8,
+    "w_c": 34.8,
+    "kappa": 1.55
+  },
+  "monte_carlo": {
+    "mean": 12.45,
+    "ci_lo": 6.2,
+    "ci_hi": 28.0,
+    "pct_hw": 97.5,
+    "n_draws": 10000,
+    "channels": [
+      {
+        "name": "Ecological cascade risk",
+        "dist": "log-normal",
+        "lo": 8,
+        "hi": 45,
+        "mode": 22
+      },
+      {
+        "name": "Resistance evolution",
+        "dist": "triangular",
+        "lo": 4,
+        "hi": 18,
+        "mode": 9
+      },
+      {
+        "name": "Off-target species harm",
+        "dist": "log-normal",
+        "lo": 3,
+        "hi": 15,
+        "mode": 7
+      },
+      {
+        "name": "Gene flow to non-target populations",
+        "dist": "triangular",
+        "lo": 2,
+        "hi": 12,
+        "mode": 5
+      },
+      {
+        "name": "Irreversibility cost",
+        "dist": "log-normal",
+        "lo": 5,
+        "hi": 30,
+        "mode": 14
+      },
+      {
+        "name": "Governance failure",
+        "dist": "uniform",
+        "lo": 1,
+        "hi": 8,
+        "mode": 4
+      }
+    ]
+  },
+  "thresholds": [
+    {
+      "domain": "First open-environment gene drive release",
+      "year": 2028,
+      "confidence": "Low",
+      "status": "Target Malaria confined field trials ongoing; no open-environment release approved",
+      "crossed": false
+    },
+    {
+      "domain": "IUCN gene drive policy framework",
+      "year": 2026,
+      "confidence": "Medium",
+      "status": "Resolution 6.071 (2016) calls for moratorium; updated guidance pending",
+      "crossed": false
+    },
+    {
+      "domain": "Resistance evolution in contained trials",
+      "year": 2025,
+      "confidence": "High",
+      "status": "Resistance to homing drives documented in laboratory populations within 10 generations",
+      "crossed": true
+    },
+    {
+      "domain": "Transboundary gene drive governance framework",
+      "year": 2030,
+      "confidence": "Low",
+      "status": "CBD lacks specific gene drive provisions; CBD COP15 Kunming-Montreal silent on mechanism",
+      "crossed": false
+    }
+  ],
+  "axioms": {
+    "type": "impossibility",
+    "items": [
+      {
+        "id": "A1",
+        "name": "Functional Deployment Necessity",
+        "description": "Gene drives are deployed in wild populations to achieve beneficial outcomes (malaria vector suppression, invasive species control) requiring spread through the target population beyond founder containment."
+      },
+      {
+        "id": "A2",
+        "name": "Ecological Integration Identity",
+        "description": "Releasing a gene drive organism and restructuring the target ecosystem's evolutionary trajectory are constitutively the same genetic event; once the drive allele propagates beyond a founder population, it cannot be recalled."
+      },
+      {
+        "id": "A3",
+        "name": "Evolutionary Unpredictability",
+        "description": "The target population's evolutionary response \u2014 resistance evolution, fitness compensation, horizontal gene transfer, off-target ecological effects \u2014 cannot be predicted with sufficient precision to guarantee bounded welfare outcomes at ecosystem scale."
+      }
+    ]
+  },
+  "methods": {
+    "welfare_function": "W estimated from probabilistic ecological risk models using Monte Carlo over resistance evolution rates, off-target species interaction networks, and irreversibility cost \u2014 necessarily theoretical given no commercial deployment to date.",
+    "cooperative_baseline": "Contained gene drive technology (daisy-chain or threshold-dependent drives) that self-limits spread to target populations, generating $0.3B in malaria control research value without open-ecosystem diffusion.",
+    "key_sources": [
+      "NASEM, Gene Drives on the Horizon (2016)",
+      "Target Malaria consortium, Burkina Faso field trial reports (2023)",
+      "Esvelt et al., Concerning RNA-guided gene drives (2014) eLife",
+      "CBD, Kunming-Montreal Global Biodiversity Framework (2022)"
+    ],
+    "falsification": [
+      "F1: Demonstrate that a homing gene drive maintains full efficacy across >50 generations in a wild population without resistance evolution (falsifies A3).",
+      "F2: Show that a released gene drive can be recalled or suppressed after propagation beyond 10% of the target population (falsifies A2).",
+      "F3: Demonstrate that daisy-chain confined gene drives achieve malaria transmission reduction comparable to open-release designs, making A1 satisfiable without triggering A2."
+    ]
+  }
+}

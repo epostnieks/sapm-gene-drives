@@ -12,8 +12,8 @@ import { BarChart, Bar, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, R
 const META = {
   title: "Gene Drive Deployment",
   subtitle: "System Welfare Cost of Ecological Irreversibility",
-  beta: "12.4",
-  ci: "",
+  beta: "42.48",
+  ci: "23.72–73.06",
   pi: "$124.0B",
   psa: "-$1537.6B/yr",
   mu: "0.0806 (8.1%)",
@@ -69,23 +69,24 @@ const HIGHLIGHTS = [
         "Contained drives (daisy-chain, threshold) escape the Floor: β_W drops substantially. Impossibility applies specifically to open-release homing drives.",
 ];
 
-const PSF_PARAMS = {pi_c:0.23,pi_p:2.8,w_c:14.0,kappa:0.92};
-const PSF_DATA = [{pi:0.02,w:13.91},{pi:0.17,w:13.99},{pi:0.31,w:13.99},{pi:0.46,w:13.9},{pi:0.6,w:13.73},{pi:0.75,w:13.47},{pi:0.89,w:13.15},{pi:1.04,w:12.72},{pi:1.18,w:12.24},{pi:1.33,w:11.64},{pi:1.47,w:11.0},{pi:1.61,w:10.29},{pi:1.76,w:9.44},{pi:1.9,w:8.56},{pi:2.05,w:7.54},{pi:2.19,w:6.51},{pi:2.34,w:5.32},{pi:2.48,w:4.13},{pi:2.63,w:2.77},{pi:2.77,w:1.42},{pi:2.92,w:-0.11},{pi:3.06,w:-1.62},{pi:3.21,w:-3.32},{pi:3.35,w:-4.98},{pi:3.5,w:-6.85},{pi:3.64,w:-8.68}];
+const PSF_PARAMS = {pi_c:0.3,pi_p:2.8,w_c:34.8,kappa:1.55};
+const PSF_DATA = [{pi:0.03,w:34.17},{pi:0.15,w:34.61},{pi:0.27,w:34.79},{pi:0.39,w:34.73},{pi:0.51,w:34.42},{pi:0.63,w:33.86},{pi:0.75,w:33.05},{pi:0.87,w:32.0},{pi:0.99,w:30.69},{pi:1.11,w:29.14},{pi:1.23,w:27.34},{pi:1.35,w:25.28},{pi:1.47,w:22.99},{pi:1.59,w:20.44},{pi:1.71,w:17.64},{pi:1.83,w:14.6},{pi:1.96,w:11.02},{pi:2.08,w:7.46},{pi:2.2,w:3.64},{pi:2.32,w:-0.42},{pi:2.44,w:-4.72},{pi:2.56,w:-9.28},{pi:2.68,w:-14.09},{pi:2.8,w:-19.14},{pi:2.92,w:-24.44},{pi:3.04,w:-29.99},{pi:3.16,w:-35.79},{pi:3.28,w:-41.84},{pi:3.4,w:-48.14},{pi:3.52,w:-54.68},{pi:3.64,w:-61.48}];
 
-const MC_PARAMS = {n_draws:10000,mean:12.4,ci_lo:7.8,ci_hi:19.6,pct_hw:99.7,channels:[{name:"Ecological cascade from species suppression",dist:"log-normal",lo:4.8,hi:9.2},{name:"Horizontal gene transfer risk",dist:"triangular",lo:2.0,hi:4.8},{name:"Irreversible biodiversity loss",dist:"log-normal",lo:1.5,hi:3.2},{name:"Transboundary governance failure",dist:"uniform",lo:0.5,hi:1.8}]};
-const MC_DATA = [{bin:"0.6",count:5},{bin:"1.9",count:16},{bin:"3.1",count:42},{bin:"4.4",count:99},{bin:"5.6",count:205},{bin:"6.9",count:375},{bin:"8.1",count:606},{bin:"9.3",count:867},{bin:"10.6",count:1099},{bin:"11.8",count:1234},{bin:"13.1",count:1227},{bin:"14.3",count:1081},{bin:"15.6",count:843},{bin:"16.8",count:582},{bin:"18.1",count:356},{bin:"19.3",count:193},{bin:"20.6",count:92},{bin:"21.8",count:39},{bin:"23.0",count:14},{bin:"24.3",count:4}];
+const MC_HIST = [{bin:"19.58",lo:19.5772,hi:21.0476,count:89},{bin:"21.05",lo:21.0476,hi:22.5180,count:156},{bin:"22.52",lo:22.5180,hi:23.9884,count:266},{bin:"23.99",lo:23.9884,hi:25.4588,count:351},{bin:"25.46",lo:25.4588,hi:26.9292,count:392},{bin:"26.93",lo:26.9292,hi:28.3997,count:485},{bin:"28.40",lo:28.3997,hi:29.8701,count:477},{bin:"29.87",lo:29.8701,hi:31.3405,count:512},{bin:"31.34",lo:31.3405,hi:32.8109,count:488},{bin:"32.81",lo:32.8109,hi:34.2813,count:470},{bin:"34.28",lo:34.2813,hi:35.7517,count:434},{bin:"35.75",lo:35.7517,hi:37.2221,count:439},{bin:"37.22",lo:37.2221,hi:38.6925,count:395},{bin:"38.69",lo:38.6925,hi:40.1629,count:373},{bin:"40.16",lo:40.1629,hi:41.6333,count:354},{bin:"41.63",lo:41.6333,hi:43.1038,count:315},{bin:"43.10",lo:43.1038,hi:44.5742,count:278},{bin:"44.57",lo:44.5742,hi:46.0446,count:264},{bin:"46.04",lo:46.0446,hi:47.5150,count:286},{bin:"47.51",lo:47.5150,hi:48.9854,count:236},{bin:"48.99",lo:48.9854,hi:50.4558,count:231},{bin:"50.46",lo:50.4558,hi:51.9262,count:210},{bin:"51.93",lo:51.9262,hi:53.3966,count:194},{bin:"53.40",lo:53.3966,hi:54.8670,count:191},{bin:"54.87",lo:54.8670,hi:56.3374,count:185},{bin:"56.34",lo:56.3374,hi:57.8079,count:175},{bin:"57.81",lo:57.8079,hi:59.2783,count:161},{bin:"59.28",lo:59.2783,hi:60.7487,count:140},{bin:"60.75",lo:60.7487,hi:62.2191,count:169},{bin:"62.22",lo:62.2191,hi:63.6895,count:145},{bin:"63.69",lo:63.6895,hi:65.1599,count:118},{bin:"65.16",lo:65.1599,hi:66.6303,count:108},{bin:"66.63",lo:66.6303,hi:68.1007,count:100},{bin:"68.10",lo:68.1007,hi:69.5711,count:95},{bin:"69.57",lo:69.5711,hi:71.0415,count:87},{bin:"71.04",lo:71.0415,hi:72.5120,count:63},{bin:"72.51",lo:72.5120,hi:73.9824,count:59},{bin:"73.98",lo:73.9824,hi:75.4528,count:73},{bin:"75.45",lo:75.4528,hi:76.9232,count:51},{bin:"76.92",lo:76.9232,hi:78.3936,count:37},{bin:"78.39",lo:78.3936,hi:79.8640,count:52},{bin:"79.86",lo:79.8640,hi:81.3344,count:32},{bin:"81.33",lo:81.3344,hi:82.8048,count:31},{bin:"82.80",lo:82.8048,hi:84.2752,count:31},{bin:"84.28",lo:84.2752,hi:85.7456,count:29},{bin:"85.75",lo:85.7456,hi:87.2161,count:15},{bin:"87.22",lo:87.2161,hi:88.6865,count:17},{bin:"88.69",lo:88.6865,hi:90.1569,count:14},{bin:"90.16",lo:90.1569,hi:91.6273,count:19},{bin:"91.63",lo:91.6273,hi:93.0977,count:8}];
+const MC_STATS = {mean:42.4811,median:38.6859,ci_lo:23.7228,ci_hi:73.0554,pct_hw:100.0,pct_above_3:100.0,pct_above_5:100.0,min:14.9744,max:135.6444,n_draws:10000,seed:42};
+const MC_CHANNELS = [{name:"Ecological cascade risk",mean:47.15,p5:27.02,p50:44.98,p95:75.24,share:0.4081},{name:"Resistance evolution",mean:10.35,p5:5.85,p50:10.11,p95:15.41,share:0.0896},{name:"Off-target species harm",mean:15.54,p5:9.90,p50:14.99,p95:22.92,share:0.1345},{name:"Gene flow non-target pop.",mean:6.37,p5:3.21,p50:6.13,p95:10.16,share:0.0552},{name:"Irreversibility cost",mean:31.62,p5:17.86,p50:30.14,p95:50.45,share:0.2736},{name:"Governance failure",mean:4.51,p5:1.34,p50:4.51,p95:7.66,share:0.0390}];
+const MC_WELFARE = {mean:115.54,ci_lo:87.76,ci_hi:149.48};
 
-const THRESHOLDS = [{domain:"First open-release gene drive organism",year:2028,status:"Target Malaria project (Gates Foundation funded) planning Anopheles gambiae gene drive release in Burkina Faso/Mali; Phase 2 (sterile male) completed 2019, Phase 3 (gene drive) pending",confidence:"Low",crossed:false},{domain:"CBD COP moratorium decision",year:2024,status:"CBD COP15 (2022) called for case-by-case risk assessment but no moratorium; synthetic biology AHTEG continues deliberations",confidence:"Medium",crossed:false},{domain:"Containment failure probability threshold",year:2026,status:"Noble et al. (2018, Science) modeling shows CRISPR-based drives spread to near-fixation in connected populations within 10–20 generations; daisy-chain drives offer partial containment but unproven at scale",confidence:"Low",crossed:false},{domain:"Multi-species drive interaction",year:2035,status:"No empirical data on cascading effects of suppression drives on food webs; Deredec et al. (2011) model predicts >60% probability of non-target ecological effects",confidence:"Very Low",crossed:false}];
+const THRESHOLDS = [{domain:"First open-environment gene drive release",year:2028,confidence:"Low",status:"Target Malaria confined field trials ongoing; no open-environment release approved",crossed:false},{domain:"IUCN gene drive policy framework",year:2026,confidence:"Medium",status:"Resolution 6.071 (2016) calls for moratorium; updated guidance pending",crossed:false},{domain:"Resistance evolution in contained trials",year:2025,confidence:"High",status:"Resistance to homing drives documented in laboratory populations within 10 generations",crossed:true},{domain:"Transboundary gene drive governance framework",year:2030,confidence:"Low",status:"CBD lacks specific gene drive provisions; CBD COP15 Kunming-Montreal silent on mechanism",crossed:false}];
 
-const AXIOMS = {type:"impossibility",items:[{id:"A1",name:"Super-Mendelian Inheritance Irreversibility",description:"CRISPR-Cas9 gene drives achieve >99% inheritance (vs. 50% Mendelian); once released, a suppression drive in Anopheles gambiae would spread through connected populations across sub-Saharan Africa within 2–5 years. No recall mechanism exists for a self-propagating genetic element in wild populations (Esvelt et al. 2014, eLife)."},{id:"A2",name:"Ecological Network Unpredictability",description:"Anopheles gambiae is prey for 400+ species and pollinator for multiple plant species; suppression-to-extinction would cascade through food webs in ways that cannot be modeled a priori. Dunne et al. (2002, PNAS) network analysis shows that removal of highly connected nodes triggers non-linear collapse."},{id:"A3",name:"Evolutionary Resistance Arms Race",description:"Target site resistance evolves within 10–25 generations in lab populations (Hammond et al. 2017, Nature Biotechnology); resistant alleles create selection pressure for drive-resistant populations, potentially generating novel Anopheles variants with unpredictable vectorial capacity."}]};
+const AXIOMS = {type:"impossibility",items:[{id:"A1",name:"Functional Deployment Necessity",description:"Gene drives are deployed in wild populations to achieve beneficial outcomes (malaria vector suppression, invasive species control) requiring spread through the target population beyond founder containment."},{id:"A2",name:"Ecological Integration Identity",description:"Releasing a gene drive organism and restructuring the target ecosystem\'s evolutionary trajectory are constitutively the same genetic event; once the drive allele propagates beyond a founder population, it cannot be recalled."},{id:"A3",name:"Evolutionary Unpredictability",description:"The target population\'s evolutionary response — resistance evolution, fitness compensation, horizontal gene transfer, off-target ecological effects — cannot be predicted with sufficient precision to guarantee bounded welfare outcomes at ecosystem scale."}]};
 
 const METHODS_DATA = {
-  welfare_function: "W = Malaria_burden_reduction − [Ecological_cascade + Resistance_evolution + Governance_failure]. Malaria kills 619K/yr (WHO 2023) valued at $12B (VSL-adjusted DALYs); but gene drive ecological risks span continental ecosystems worth $trillions in services (Costanza et al. 2014).",
-  cooperative_baseline: "Contained gene drive research with strict biocontainment (self-limiting drives, daisy-chain architecture), combined with conventional vector control scaling (ITNs, IRS, SMC); cooperative Π_C = $0.23B reflects research-only activity without open release.",
-  falsification: ["If self-limiting (daisy-chain) gene drives demonstrate reliable spatial containment in field trials, irreversibility axiom weakens.","If ecological modeling achieves reliable prediction of multi-trophic cascade effects, unpredictability axiom needs revision.","If Monte Carlo robustness for β_W > 1 falls below 80%, point estimate is unreliable.","If resistance evolution is slower than modeled (>100 generations), the arms race concern is less acute."],
-  key_sources: ["Esvelt, K.M. et al. (2014). Emerging Technology: Concerning RNA-guided gene drives for the alteration of wild populations. eLife 3.","Hammond, A. et al. (2017). The creation and selection of mutations resistant to a gene drive over multiple generations. Nature Biotechnology 35.","Noble, C. et al. (2018). Daisy-chain gene drives for the alteration of local populations. PNAS 116(17).","WHO (2023). World Malaria Report 2023.","NASEM (2016). Gene Drives on the Horizon: Advancing Science, Navigating Uncertainty, and Aligning Research with Public Values."]
+  welfare_function: "W estimated from probabilistic ecological risk models using Monte Carlo over resistance evolution rates, off-target species interaction networks, and irreversibility cost — necessarily theoretical given no commercial deployment to date.",
+  cooperative_baseline: "Contained gene drive technology (daisy-chain or threshold-dependent drives) that self-limits spread to target populations, generating $0.3B in malaria control research value without open-ecosystem diffusion.",
+  falsification: ["F1: Demonstrate that a homing gene drive maintains full efficacy across >50 generations in a wild population without resistance evolution (falsifies A3).","F2: Show that a released gene drive can be recalled or suppressed after propagation beyond 10% of the target population (falsifies A2).","F3: Demonstrate that daisy-chain confined gene drives achieve malaria transmission reduction comparable to open-release designs, making A1 satisfiable without triggering A2."],
+  key_sources: ["NASEM, Gene Drives on the Horizon (2016)","Target Malaria consortium, Burkina Faso field trial reports (2023)","Esvelt et al., Concerning RNA-guided gene drives (2014) eLife","CBD, Kunming-Montreal Global Biodiversity Framework (2022)"]
 };
-
 
 // ─── Color palette ───────────────────────────────────────────────────────────
 const C = {
@@ -336,51 +337,58 @@ export default function PSTGenedrivesDashboard() {
             </div>
           </div>
         )}
-
         {/* MONTE CARLO TAB */}
         {tab === 'monte-carlo' && (
           <div>
-            <SectionTitle>Monte Carlo Robustness — {MC_PARAMS.n_draws.toLocaleString()} Draws</SectionTitle>
+            <SectionTitle>Monte Carlo Simulation — {MC_STATS.n_draws.toLocaleString()} Draws (seed={MC_STATS.seed})</SectionTitle>
             <div style={{background:C.panel,border:`1px solid ${C.border}`,borderRadius:4,padding:16,marginBottom:16}}>
-              <ResponsiveContainer width="100%" height={280}>
-                <BarChart data={MC_DATA} margin={{top:10,right:30,left:20,bottom:10}}>
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={MC_HIST} margin={{top:10,right:30,left:20,bottom:30}}>
                   <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
-                  <XAxis dataKey="bin" stroke={C.muted} tick={{fontFamily:C.mono,fontSize:10}} />
+                  <XAxis dataKey="bin" stroke={C.muted} tick={{fontFamily:C.mono,fontSize:9}} angle={-45} textAnchor="end" interval={4} />
                   <YAxis stroke={C.muted} tick={{fontFamily:C.mono,fontSize:11}} />
-                  <Tooltip contentStyle={{background:C.panel,border:`1px solid ${C.border}`,fontFamily:C.mono,fontSize:12,color:C.text}} />
+                  <Tooltip contentStyle={{background:C.panel,border:`1px solid ${C.border}`,fontFamily:C.mono,fontSize:12,color:C.text}} formatter={(v)=>[v,'Draws']} />
                   <Bar dataKey="count" fill={C.gold} />
-                  <ReferenceLine x={MC_PARAMS.mean.toFixed(1)} stroke={C.crimson} strokeDasharray="5 5" label={{value:'β̄='+MC_PARAMS.mean,fill:C.crimson,fontFamily:C.mono,fontSize:11}} />
+                  <ReferenceLine x={MC_STATS.mean.toFixed(2)} stroke={C.crimson} strokeWidth={2} strokeDasharray="5 5" label={{value:'μ='+MC_STATS.mean.toFixed(2),fill:C.crimson,fontFamily:C.mono,fontSize:11,position:'top'}} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
             <div style={{display:'flex',gap:12,flexWrap:'wrap',marginBottom:16}}>
-              <Metric label="MEAN β_W" value={MC_PARAMS.mean} color={C.gold} />
-              <Metric label="90% CI" value={'['+MC_PARAMS.ci_lo+', '+MC_PARAMS.ci_hi+']'} color={C.muted} />
-              <Metric label="% HOLLOW WIN" value={MC_PARAMS.pct_hw+'%'} color={MC_PARAMS.pct_hw > 90 ? C.crimson : C.gold} />
+              <Metric label="MEAN β_W" value={MC_STATS.mean.toFixed(2)} sub={'Median: '+MC_STATS.median.toFixed(2)} color={C.gold} />
+              <Metric label="90% CI" value={'['+MC_STATS.ci_lo.toFixed(2)+', '+MC_STATS.ci_hi.toFixed(2)+']'} sub={'Range: '+MC_STATS.min.toFixed(2)+'–'+MC_STATS.max.toFixed(2)} color={C.muted} />
+              <Metric label="% HOLLOW WIN" value={MC_STATS.pct_hw.toFixed(1)+'%'} sub={'β_W > 1 in all draws'} color={MC_STATS.pct_hw > 95 ? C.crimson : C.gold} />
+              <Metric label="% β_W > 3" value={MC_STATS.pct_above_3.toFixed(1)+'%'} color={MC_STATS.pct_above_3 > 90 ? C.crimson : C.gold} />
+              <Metric label="% β_W > 5" value={MC_STATS.pct_above_5.toFixed(1)+'%'} color={MC_STATS.pct_above_5 > 50 ? '#D97706' : C.gold} />
             </div>
-            {MC_PARAMS.channels && MC_PARAMS.channels.length > 0 && (
-              <div style={{padding:16,background:C.panel,border:`1px solid ${C.border}`,borderRadius:4}}>
-                <div style={{fontFamily:C.mono,fontSize:12,color:C.gold,marginBottom:8}}>DISTRIBUTION PARAMETERS</div>
-                <table style={{width:'100%',borderCollapse:'collapse',fontFamily:C.mono,fontSize:13}}>
-                  <thead><tr style={{borderBottom:`1px solid ${C.border}`}}>
-                    <th style={{padding:'6px 10px',textAlign:'left',color:C.gold}}>CHANNEL</th>
-                    <th style={{padding:'6px 10px',textAlign:'left',color:C.gold}}>DISTRIBUTION</th>
-                    <th style={{padding:'6px 10px',textAlign:'right',color:C.gold}}>LOW</th>
-                    <th style={{padding:'6px 10px',textAlign:'right',color:C.gold}}>HIGH</th>
-                  </tr></thead>
-                  <tbody>
-                    {MC_PARAMS.channels.map((ch,i) => (
-                      <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`}}>
-                        <td style={{padding:'6px 10px',color:C.text}}>{ch.name}</td>
-                        <td style={{padding:'6px 10px',color:C.muted}}>{ch.dist}</td>
-                        <td style={{padding:'6px 10px',color:C.muted,textAlign:'right'}}>{ch.lo}</td>
-                        <td style={{padding:'6px 10px',color:C.muted,textAlign:'right'}}>{ch.hi}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
+            <SectionTitle>Channel Welfare Contributions</SectionTitle>
+            <table style={{width:'100%',borderCollapse:'collapse',fontFamily:C.mono,fontSize:13}}>
+              <thead><tr style={{borderBottom:`1px solid ${C.border}`}}>
+                <th style={{padding:'8px 12px',textAlign:'left',color:C.gold}}>CHANNEL</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>MEAN $B</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P5</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P50</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P95</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>SHARE</th>
+              </tr></thead>
+              <tbody>
+                {MC_CHANNELS.map((ch,i) => (
+                  <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`,background:i%2===0?C.panel:C.bg}}>
+                    <td style={{padding:'8px 12px',color:C.text,fontFamily:C.serif,fontSize:14}}>{ch.name}</td>
+                    <td style={{padding:'8px 12px',color:C.gold,textAlign:'right',fontWeight:600}}>{ch.mean.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p5.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p50.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p95.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{(ch.share*100).toFixed(1)}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div style={{marginTop:16,padding:12,background:'rgba(245,158,11,0.06)',border:`1px solid rgba(245,158,11,0.15)`,borderRadius:4}}>
+              <div style={{fontFamily:C.mono,fontSize:11,color:C.muted}}>Total welfare cost: <span style={{color:C.gold}}>${MC_WELFARE.mean.toFixed(1)}B</span> (90% CI: ${MC_WELFARE.ci_lo.toFixed(1)}B – ${MC_WELFARE.ci_hi.toFixed(1)}B) · Source: sapm_monte_carlo.py (seed=42)</div>
+            </div>
+          </div>
+        )}
+
           </div>
         )}
 
