@@ -60,12 +60,12 @@ const CROSS_DOMAIN = [
 ];
 
 const HIGHLIGHTS = [
-        "β_W = 12.4 for open-release homing drives. Floor β ≈ 4.2 — no governance mechanism can reduce below this through any action.",
+        "βW = 12.4 for open-release homing drives. Floor β ≈ 4.2 — no governance mechanism can reduce below this through any action.",
         "Ecological Ratchet Floor (Theorem VIII): self-propagating construct drives to fixation in wild population — no recall mechanism exists once released.",
         "Governance Externalization (A3): any single actor releasing a gene drive imposes consequences on every sovereign territory the target species inhabits. No consent framework possible.",
         "Channel 4 (Irreversibility) alone β = 2.61: permanent destruction of option value for all future interventions in species carrying modified allele.",
         "Channel 6 (Vector replacement): eliminating Anopheles gambiae may shift malaria vector pressure to A. arabiensis or A. funestus — net malaria burden reduction uncertain.",
-        "Contained drives (daisy-chain, threshold) escape the Floor: β_W drops substantially. Impossibility applies specifically to open-release homing drives.",
+        "Contained drives (daisy-chain, threshold) escape the Floor: βW drops substantially. Impossibility applies specifically to open-release homing drives.",
 ];
 
 const PSF_PARAMS = {pi_c:0.3,pi_p:2.8,w_c:34.8,kappa:1.55};
@@ -325,7 +325,7 @@ export default function PSTGenedrivesDashboard() {
                   <th style={{padding:'8px 12px',textAlign:'left',color:C.gold}}>CAPM ANALOGUE</th>
                 </tr></thead>
                 <tbody>
-                  {[['β_W (System Beta)','β (Market Beta)'],['PSF (Private-Systemic Frontier)','SML (Security Market Line)'],[<>μ* (Shadow Price)</>,<>r<sub>f</sub> (Risk-Free Rate)</>],['Πˢᵃ (System-Adjusted Payoff)','α (Jensen\'s Alpha)'],['W (System Welfare)','No equivalent — structurally invisible'],[<>𝒮<sub>W</sub> (Welfare Efficiency)</>,<>Sharpe Ratio</>]].map(([s,c],i) => (
+                  {[[<>β<sub>W</sub> (System Beta)</>,<>β (Market Beta)</>],['PSF (Private-Systemic Frontier)','SML (Security Market Line)'],[<>μ* (Shadow Price)</>,<>r<sub>f</sub> (Risk-Free Rate)</>],['Πˢᵃ (System-Adjusted Payoff)','α (Jensen\'s Alpha)'],['W (System Welfare)','No equivalent — structurally invisible'],[<>𝒮<sub>W</sub> (Welfare Efficiency)</>,<>Sharpe Ratio</>]].map(([s,c],i) => (
                     <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`}}>
                       <td style={{padding:'8px 12px',color:C.text}}>{s}</td>
                       <td style={{padding:'8px 12px',color:C.muted,fontFamily:C.serif}}>{c}</td>
@@ -482,7 +482,7 @@ export default function PSTGenedrivesDashboard() {
       </div>
 
       
-      {/* 𝒮_W WELFARE EFFICIENCY RATIO */}
+      {/* 𝒮W WELFARE EFFICIENCY RATIO */}
       <div style={{padding:"24px",background:C.panel,border:"2px solid #EF444440",borderRadius:4,margin:"24px 0"}}>
         <div style={{fontFamily:C.mono,fontSize:12,color:"#EF4444",letterSpacing:2,marginBottom:16}}>WELFARE EFFICIENCY RATIO</div>
         <div style={{display:"flex",alignItems:"baseline",gap:12,marginBottom:12}}>
